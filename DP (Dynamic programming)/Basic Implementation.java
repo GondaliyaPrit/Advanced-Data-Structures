@@ -41,14 +41,16 @@ dp(perametrs,  perametrs ){
    return memo[parameters];
  }
  // if Above condition  is failed than i solved pro at and i need to solve it
+
+ // CAll DP  FUNCATION   Its call Calaculation STAP
+ ans  = dp(perametrs-1) //Call  on smaller input
+  
+ //THIS STAP CALL AS memorization STAP  memorization
+  memo[n]= ans ;
  
- // CAll DP  FUNCATION 
- ans  = 
- 
-   
+  return ans ;
+
 }
-
-
 
 
 
