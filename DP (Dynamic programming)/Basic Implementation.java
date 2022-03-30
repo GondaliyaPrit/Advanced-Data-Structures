@@ -35,13 +35,16 @@ dp(perametrs,  perametrs ){
  }
  // Before moving down i am calculating it if memo has ans alerady  
  
+ //THIS STAP CALL AS RECOLLECTION STAP
  if(memo[parameters] != -1)
  {
    return memo[parameters];
  }
+ // if Above condition  is failed than i solved pro at and i need to solve it
  
-  memo
-   
+ // CAll DP  FUNCATION 
+ ans  = 
+ 
    
 }
 
