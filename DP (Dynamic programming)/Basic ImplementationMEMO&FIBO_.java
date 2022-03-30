@@ -53,6 +53,9 @@ dp(perametrs,  perametrs ){
 }
 
 
+*Fibonacci  is a Parent Qes *
+* stairCase  is a child Qes  This Qes ask in interview *
+
 
 =======================Fibonacci Of N Numberusing recursion =======================
 
@@ -115,6 +118,18 @@ public class Main {
 
 }
 
+
+
+/*
+
+1) How to know this is a DP pro  
+--> Dp will be one of this two ways 
+    1) Optimazation 
+         --> ask you to find MIN , MAX , BEST , SMALLEST , LARGEST  
+             this  types of Qus include in DP Pro or greedy technique
+    2) Combitorial 
+         --> ask to find Number of ways  like countig pro 
+*/
 
 
 
