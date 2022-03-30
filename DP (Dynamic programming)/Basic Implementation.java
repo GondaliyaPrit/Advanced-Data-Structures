@@ -80,5 +80,46 @@ public class Main {
 
 
 
+=======================Fibonacci Of N Numberusing DP(Dynamic programming)=======================
+
+public class Main {
+
+    public static void main(String[] args) {
+        // write your code here
+        Scanner S = new Scanner(System.in);
+        int n = S.nextInt();
+        System.out.println(fiboUsingDpmethod(n));
+    }
+
+    public static int fiboUsingDpmethod(int n) {
+        int[] memo = new int[n + 1];
+        _initialize(memo);
+        if (n == 0 || n == 1) {
+            return 1;
+        }
+        if (memo[n] != -1) {
+            return memo[n];
+        }
+        int ans = fiboUsingDpmethod(n - 1) + fiboUsingDpmethod(n - 2);
+        memo[n] = ans;
+        return ans;
+    }
+
+    static void _initialize(int[] memo) {
+        int NIL = -1;
+        for (int i = 0; i < memo.length; i++)
+            memo[i] = NIL;
+    }
+
+}
+
+
+
+
+
+
+
+
+
 
 
