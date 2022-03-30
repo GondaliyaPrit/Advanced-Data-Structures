@@ -16,6 +16,38 @@ This is a DP Principal
 */
 
 
+/*
+Pattern Of sudocode  every DP pro follow this pattern 
+*/
+
+dp(perametrs,  perametrs ){
+ 
+ /*
+      memo :- something to whare store your reminders 
+      memo will memorised everything what you are done earlier
+      
+      most of time memo formet are array memo[]
+      memo[] in filled -1 is this is defult value 
+ */
+ if(check base condition)
+ {
+  return  value ;
+ }
+ // Before moving down i am calculating it if memo has ans alerady  
+ 
+ if(memo[parameters] != -1)
+ {
+   return memo[parameters];
+ }
+ 
+  memo
+   
+   
+}
+
+
+
+
 
 =======================Fibonacci Of N Numberusing recursion =======================
 
