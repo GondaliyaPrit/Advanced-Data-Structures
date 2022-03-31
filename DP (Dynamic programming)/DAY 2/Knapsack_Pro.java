@@ -60,8 +60,48 @@ public class Knapsack_Pro {
 
 
 ====================USING DP====================
-  
-  
+
+//Time Complexity: O(N)
+public class Main {
+
+    public static void main(String[] args) {
+        int[] wight = {10, 20, 30};
+        int[] price = {60, 100, 120};
+        int cap = 50;
+        int n = wight.length;
+
+        System.out.println(MaxnumUsingdp(price, wight, n, cap));
+
+    }
+
+    public static int MaxnumUsingdp(int[] price, int[] wight, int n, int cap) {
+        int memo[][] = new int[n + 1][cap + 1];
+        for (int i = 0; i < n + 1; i++) {
+            for (int j = 0; j < cap + 1; j++) {
+                memo[i][j] = -1;
+            }
+        }
+        if (n == 0 || cap <= 0) {
+            return 0;
+        }
+        if (memo[n][cap] != -1) {
+            return memo[n][cap];
+        }
+        int ans = 0;
+       // Calling Recuersion for pick item
+        int pickit = MaxnumUsingdp(price, wight, n - 1, cap - wight[n - 1]);
+        // Calling Recuersion for skip item
+        int skip = MaxnumUsingdp(price, wight, n - 1, cap);
+        if (wight[n - 1] > cap) {
+            ans = skip;
+        } else {
+            ans = Math.max(pickit + price[n - 1], skip);
+        }
+        memo[n][cap] = ans;
+        return ans;
+    }
+}
+
   
   
   
