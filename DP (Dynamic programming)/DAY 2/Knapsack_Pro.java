@@ -1,4 +1,7 @@
 /*
+
+Knapsack_Pro --> Its mens always pick number and parfrom any opration 
+
 Qes 1) 
 https://github.com/pritGondaliyav/Advanced-Data-Structures/blob/main/DP%20(Dynamic%20programming)/DAY%202/problemStatment.jpeg
 DP (Dynamic programming)/DAY 2/problemStatment.jpeg --> You need to put item array to bag such that the bag has max price value 
