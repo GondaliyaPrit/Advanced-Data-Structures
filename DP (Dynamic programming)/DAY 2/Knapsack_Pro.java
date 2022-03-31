@@ -21,10 +21,51 @@ Ans :
                     of item more 
                     than bag 
                     capacity left
-                    
-                    
-                    
-                    
-                    
-                    
+                             
 */
+
+
+====================USING RECUERSION====================
+  
+//Time Complexity: O(2*N)
+  
+public class Knapsack_Pro {
+    public static void main(String[] args) {
+        int[] wight = {10, 20, 30};
+        int[] price = {60, 100, 120};
+        int cap = 50;
+        int n = wight.length;
+
+        System.out.println(MaxNumber(price, wight, n, cap));
+        
+    }
+
+    public static int MaxNumber(int[] price, int[] wight, int n, int cap) {
+        if (n == 0 || cap <= 0) {
+            return 0;
+        }
+        // Calling Recuersion for pick item
+        int pickit = MaxNumber(price, wight, n - 1, cap - wight[n - 1]);
+        // Calling Recuersion for skip item 
+        int skip = MaxNumber(price, wight, n - 1, cap);
+
+        if (wight[n - 1] > cap) {
+            return skip;
+        } else {
+            // if you pick item than you add price  otherwise not add price   
+            return Math.max(pickit + price[n - 1], skip);
+        }
+    }
+}
+
+
+====================USING DP====================
+  
+  
+  
+  
+  
+  
+
+
+
