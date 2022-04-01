@@ -106,7 +106,119 @@ public class Main {
 }
 
   
+--------------------------------------------------------------------------------------------------------------------------------------------------------  
+
+  Child Problem 
+ /* 
+ Qes 2) Thare is an Array  {3,5,4,4,2,1,6} thare is a sum = 8 tell me Yes or No ans  it is posible to create pick element from this set such that sum is 8  ?
+ 
+ */
+ 
+ 
+====================USING RECUERSION====================
+
+public class Childpro {
+    //todo Qes 2) Thare is an Array  {3,5,4,4,2,1,6} thare is a sum = 8 tell me Yes or No ans  it is posible to create pick element from this set such that sum is 8 ?
+
+    public static void main(String[] args) {
+        int arr[] = {3,5,4,4,2,1,6} ;
+        int sum = 8 ;
+        int n = arr.length;
+
+        if (ispossible(arr,n,sum))
+        {
+            System.out.println("Yes ispossible");
+        }
+        else {
+            System.out.println("Not possible");
+        }
+
+    }
+
+    public static  boolean ispossible(int[] arr , int n , int sum)
+    {
+       if(sum == 0)
+       {
+           return  true;
+       }
+       if(n==0)
+       {
+           return   false;
+       }
+        boolean skip = ispossible(arr,n-1,sum);
+        boolean pick = ispossible(arr,n-1,sum-arr[n-1]);
+
+       if(arr[n-1] >sum)
+       {
+           return  skip;
+       }
+       else {
+           return  skip || pick ;
+       }
+    }
+
+}
+
+
+
+
+====================USING DP====================
   
+  //CODE NOT WORKING 
+  
+ public static void main(String[] args) {
+        int arr[] = { 1, 5, 3, 7, 4 };
+        int sum = 12;
+        int n = arr.length;
+
+        if (ispossibleUsingDp(arr, n, sum)!=0) {
+            System.out.println("Yes ispossible");
+        } else {
+            System.out.println("Not possible");
+        }
+
+    }
+
+
+    public static int ispossibleUsingDp(int[] arr, int n, int sum) {
+        int memo[][] = new int[n+1][sum+1];
+
+        for (int i = 0; i < n ; i++) {
+            for (int j = 0; j < sum ; j++) {
+                memo[i][j] = -1;
+            }
+        }
+        if (sum == 0) {
+            return 1;
+        }
+        if (n <= 0) {
+            return 0;
+        }
+
+        if (memo[n-1][sum] != -1) {
+            return memo[n-1][sum];
+        }
+//        int ans = 0;
+//        int skip = ispossibleUsingDp(arr, n - 1, sum);
+//        int pick = ispossibleUsingDp(arr, n - 1, sum - arr[n - 1]);
+        if(arr[n-1] >sum)
+        {
+         //   ans = skip;
+            return  memo[n - 1][sum]=ispossibleUsingDp(arr, n - 1, sum);
+        }
+        else
+        {
+            if (ispossibleUsingDp(arr,n-1,sum) != 0 || ispossibleUsingDp(arr,n-1,sum-arr[n-1]) != 0)
+            {
+                    return  memo[n-1][sum] =1;
+            }
+            else
+            {
+                return memo[n-1][sum] =0;
+            }
+        }
+    }
+
   
   
 
