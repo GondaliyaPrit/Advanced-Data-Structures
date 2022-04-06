@@ -75,6 +75,58 @@ public class Binary_search_tree {
             BSTsearch(root.left  , data);
         }
     }
+    
+   
+    
+    // Toatal 3 case
+    1) Delete Leaf Node 
+    2) Delete node only one child
+    3) Delete node have 2 child or sub tree 
+        
+     public static  Node del(Node root , int data)
+   {
+       if(root == null)
+       {
+           return  root ;
+       }
+       if(root.data < data)
+       {
+           root.right = del(root.right, data);
+       }
+      else if(root.data > data )
+       {
+           root.left = del(root.left , data) ;
+       }
+      else
+       {
+           if(root.left == null)
+           {
+               return  root.right;
+           }
+           else if( root.right == null)
+           {
+               return  root.left;
+           }
+           root.data = minvalue(root);
+           root.right= del(root ,root.data);
+       }
+      return  root ;
+
+   }
+
+
+   public static  int minvalue(Node root)
+   {
+       int minvalue = root.data;
+
+       while(root.left != null)
+       {
+        minvalue = root.left.data;
+        root =root.left;
+       }
+       return  minvalue;
+
+   }
 
 
 
