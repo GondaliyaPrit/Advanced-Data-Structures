@@ -61,6 +61,7 @@ public class Binary_search_tree {
         if (root == null)
         {
             System.out.print(data+ " Data Not Prsent in BST");
+            return ;
         }
         if(root.data == data)
         {
