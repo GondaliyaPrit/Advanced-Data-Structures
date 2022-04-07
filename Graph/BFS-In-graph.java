@@ -13,7 +13,18 @@ public class Main {
         // write your code here
 
         ArrayList<ArrayList<Integer>> Getlist = Getlist();
-        parfromBFS(Getlist);
+      //  parfromBFS(Getlist);
+
+
+        Integer[][] matrix = {{0, 0, 0, 0, 0},
+                {1, 0, 1, 0, 0},
+                {1, 0, 0, 1, 0},
+                {1, 0, 0, 0, 0},
+                {0, 0, 0, 1, 0},
+        };
+
+        parfromBFSusingMAtrix(matrix);
+
 
     }
 
@@ -58,8 +69,40 @@ public class Main {
                 if (!visit[ver]) {
                     queue.add(ver);
                 }
-
             }
         }
     }
+
+
+    public  static  void parfromBFSusingMAtrix(Integer[][] matrix)
+    {
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(0);
+        boolean[] visit = new boolean[matrix.length];
+
+        while (!queue.isEmpty()) {
+            Integer vertex = queue.remove();
+            System.out.print(vertex + " ");
+            visit[vertex] = true;
+
+            ArrayList<Integer> list = getlist(matrix,vertex);
+            for (Integer ver : list) {
+                if (!visit[ver]) {
+                    queue.add(ver);
+                }
+            }
+        }
+    }
+
+    public static  ArrayList getlist(Integer[][] matrix , Integer Vertax)
+    {
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int i = 0; i <matrix.length ; i++) {
+            if(matrix[i][Vertax] != 0)
+            list.add(i);
+        }
+        return  list;
+    }
+
 }
+
