@@ -20,6 +20,7 @@ public class Main {
         boolean[] rec = new boolean[matrix.length];
 
         for (int i = 0; i < matrix.length; i++) {
+            //Check All Node 
             if (iscyclefound(matrix, i, visited, rec)) {
                 return true;
             }
@@ -33,6 +34,7 @@ public class Main {
         if (rec[i] == true) {
             return true;
         }
+        
         if (visited[i] == true) {
             return false;
         }
